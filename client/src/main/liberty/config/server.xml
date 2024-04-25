@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<server description="client">
+
+    <featureManager>
+        <feature>restfulWS-3.1</feature>
+        <feature>jsonp-2.1</feature>
+        <feature>jsonb-3.0</feature>
+        <feature>cdi-4.0</feature>
+        <feature>mpConfig-3.1</feature>
+        <!-- tag::grpcClient[] -->
+        <feature>grpcClient-1.0</feature>
+        <!-- end::grpcClient[] -->
+    </featureManager>
+
+    <variable defaultValue="9081" name="http.port"/>
+    <variable defaultValue="9444" name="https.port"/>
+
+    <httpEndpoint id="defaultHttpEndpoint"
+                  httpPort="${http.port}"
+                  httpsPort="${https.port}"
+                  host="*"/>
+
+    <!-- tag::grpcClientConfig[] -->
+    <grpcClient host="*" headersToPropagate="Cookie"/>
+    <!-- end::grpcClientConfig[] -->
+
+    <applicationManager autoExpand="true"/>
+
+    <webApplication contextRoot="/" location="client.war"/>
+
+    <logging consoleLogLevel="INFO"/>
+</server>

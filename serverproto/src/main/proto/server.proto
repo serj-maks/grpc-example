@@ -1,0 +1,15 @@
+syntax = "proto3";
+package org.example.serverproto;
+option java_multiple_files = true;
+
+service Server {
+  rpc getProperty (ServerPropertyName) returns (ServerPropertyValue) {}
+}
+
+message ServerPropertyName {
+  string propertyName = 1;
+}
+
+message ServerPropertyValue {
+  string propertyValue = 1;
+}
