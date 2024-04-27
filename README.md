@@ -34,4 +34,4 @@ both client and server send a stream of messages. The client and server can read
 
 `not_implemented`
 
->[grpc.io/docs]((https://grpc.io/docs/what-is-grpc/core-concepts/)
+>[grpc.io/docs](https://grpc.io/docs/what-is-grpc/core-concepts/)
