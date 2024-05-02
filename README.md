@@ -27,7 +27,7 @@ the client sends a single request and the server returns a stream of messages
 ### client streaming RPC
 the client sends a stream of messages and the server responds with a single message
 
-`not_implemented`
+`http://localhost:9081/client/properties/user`
 
 ### bidirectional RP
 both client and server send a stream of messages. The client and server can read and write messages in any order
