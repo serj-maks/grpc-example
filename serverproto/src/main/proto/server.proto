@@ -4,6 +4,8 @@ option java_multiple_files = true;
 
 service Server {
   rpc getProperty (ServerPropertyName) returns (ServerPropertyValue) {}
+
+  rpc getClientStreamingProperties (stream SystemPropertyName) returns (SystemProperties) {}
 }
 
 message ServerPropertyName {
@@ -12,4 +14,12 @@ message ServerPropertyName {
 
 message ServerPropertyValue {
   string propertyValue = 1;
+}
+
+message SystemPropertyName {
+  string propertyName = 1;
+}
+
+message SystemProperties {
+  map<string, string> properties = 1;
 }
